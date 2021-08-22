@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 //import { Link } from "gatsby";
 import { Link as GatsbyLink } from "gatsby";
 import styled from "styled-components";
 import * as colors from "../constants/StyleConsts";
+import Drawer from "./Drawer";
 
 const Container = styled.div`
   width: 100%;
@@ -14,7 +15,15 @@ const Container = styled.div`
 const HomeSection = styled.div`
   height: 100%;
   width: 50%;
-  background: ${colors.LIGHT_DARK};
+  background: ${colors.MEDIUM_DARK};
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 50px;
+
+  @media (max-width: 850px) {
+    width: 100%;
+  }
 `;
 
 const LinkSection = styled.div`
@@ -22,15 +31,18 @@ const LinkSection = styled.div`
   width: 50%;
   background: ${colors.MEDIUM_DARK};
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-around;
   align-items: center;
-  padding-right: 15px;
+
+  @media (max-width: 850px) {
+    display: none;
+  }
 `;
 
 const Tags = styled.div`
-  padding: 15px;
   font-size: 26px;
   color: ${colors.LIGHT};
+  position: relative;
 `;
 
 const StyledLink = styled(GatsbyLink)`
@@ -42,19 +54,35 @@ const StyledLink = styled(GatsbyLink)`
   }
 `;
 
-const header = () => {
+const Header = () => {
+  const [showClosedGuardDrawer, setShowClosedDrawerGuard] = useState(false);
+  const [showMountDrawer, setShowMountDrawer] = useState(false);
+
   return (
     <Container>
-      <HomeSection></HomeSection>
-      <LinkSection>
+      <HomeSection>
         <Tags>
-          <StyledLink to="/ClosedGuard">ClosedGuard</StyledLink>
+          <StyledLink to="/">Home</StyledLink>
+        </Tags>
+      </HomeSection>
+      <LinkSection>
+        <Tags onClick={() => setShowClosedDrawerGuard(!showClosedGuardDrawer)}>
+          Closed Guard
+          {showClosedGuardDrawer && <Drawer linkAddress="/ClosedGuard" />}
+        </Tags>
+        <Tags onClick={() => setShowMountDrawer(!showMountDrawer)}>
+          Mount
+          {showMountDrawer && <Drawer linkAddress="/Mount" />}
         </Tags>
         <Tags>Half Guard</Tags>
-        <Tags>Mount</Tags>
       </LinkSection>
     </Container>
   );
 };
 
-export default header;
+export default Header;
+
+/*
+Styled Link example for later..
+<StyledLink to="/ClosedGuard">ClosedGuard</StyledLink> 
+*/

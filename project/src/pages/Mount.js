@@ -1,13 +1,13 @@
 import React from "react";
 import Header from "../components/Header";
 
-const ClosedGaurd = () => {
+const Mount = () => {
   return (
     <>
       <Header />
-      Hello, from Closed Guard!
+      Hello, from Mount.js
     </>
   );
 };
 
-export default ClosedGaurd;
+export default Mount;
