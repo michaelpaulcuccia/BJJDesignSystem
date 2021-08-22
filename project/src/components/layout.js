@@ -1,37 +1,16 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
-import { GlobalStyle } from "./globalStyle"
-import { MainWrapper } from "./layoutComponents"
-import Header from "./header"
-import Footer from "./footer"
+import React from "react";
+import styled from "styled-components";
+import { CLOUDY } from "../constants/StyleConsts";
 
-const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `}
-    render={data => (
-      <>
-        <GlobalStyle />
-        <MainWrapper>
-          <Header siteTitle={data.site.siteMetadata.title} />
-          <main>{children}</main>
-          <Footer />
-        </MainWrapper>
-      </>
-    )}
-  />
-)
+const ProjectContainer = styled.div`
+  margin: 0 auto;
+  max-width: 1800px;
+  min-height: 100vh;
+  background: ${CLOUDY};
+`;
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
+const layout = (props) => {
+  return <ProjectContainer>{props.children}</ProjectContainer>;
+};
 
-export default Layout
+export default layout;

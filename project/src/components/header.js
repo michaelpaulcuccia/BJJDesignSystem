@@ -1,35 +1,60 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
-import styled from "styled-components"
-import { Container } from "./layoutComponents"
+import React from "react";
+//import { Link } from "gatsby";
+import { Link as GatsbyLink } from "gatsby";
+import styled from "styled-components";
+import * as colors from "../constants/StyleConsts";
 
-const Header = ({ siteTitle, className }) => (
-  <header className={className}>
-    <Container>
-      <h1>
-        <Link to="/">{siteTitle}</Link>
-      </h1>
-    </Container>
-  </header>
-)
+const Container = styled.div`
+  width: 100%;
+  height: 100px;
+  background: ${colors.DARK};
+  display: flex;
+`;
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+const HomeSection = styled.div`
+  height: 100%;
+  width: 50%;
+  background: ${colors.LIGHT_DARK};
+`;
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
+const LinkSection = styled.div`
+  height: 100%;
+  width: 50%;
+  background: ${colors.MEDIUM_DARK};
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 15px;
+`;
 
-const StyledHeader = styled(Header)`
-  color: var(--white);
-  background: var(--primary-color);
-  padding: 1rem 0;
-  margin-bottom: 1rem;
-  h1 {
-    margin: 0;
+const Tags = styled.div`
+  padding: 15px;
+  font-size: 26px;
+  color: ${colors.LIGHT};
+`;
+
+const StyledLink = styled(GatsbyLink)`
+  text-decoration: none;
+  color: ${colors.LIGHT};
+
+  &:hover {
+    color: ${colors.BRIGHT};
   }
-`
+`;
 
-export default StyledHeader
+const header = () => {
+  return (
+    <Container>
+      <HomeSection></HomeSection>
+      <LinkSection>
+        <Tags>
+          <StyledLink to="/ClosedGuard">ClosedGuard</StyledLink>
+        </Tags>
+        <Tags>Half Guard</Tags>
+        <Tags>Mount</Tags>
+      </LinkSection>
+    </Container>
+  );
+};
+
+export default header;
