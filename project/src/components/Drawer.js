@@ -6,14 +6,18 @@ import * as colors from "../constants/StyleConsts";
 import mount from "../images/mount.png";
 
 const Container = styled.div`
-  height: 300px;
-  width: 350px;
+  height: 350px;
+  width: 300px;
   background: ${colors.MEDIUM_DARK};
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
 
   img {
-    height: 185px;
-    width: 200px;
+    height: 150px;
+    width: 195px;
+    padding-left: 25px;
   }
 `;
 
@@ -34,6 +38,13 @@ const StyledLink = styled(GatsbyLink)`
       padding-left: 25px;
       font-size: 22px;
     }
+
+    //Nested ul
+    ul {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      padding-left: 15px;
+    }
   }
 `;
 
@@ -46,6 +57,10 @@ const Drawer = (props) => {
       <StyledLink to={props.linkAddress}>
         <ul>
           <li>{removedSlash}</li>
+          <ul>
+            <li>Sweeps</li>
+            <li>Submissions</li>
+          </ul>
         </ul>
       </StyledLink>
       <img src={mount} alt="mount" />
