@@ -10,14 +10,13 @@ import halfguard from '../images/half-guard.png';
 const Container = styled.div`
   width: 100%;
   height: 100px;
-  background: ${colors.DARK};
   display: flex;
 `;
 
 const HomeSection = styled.div`
   height: 100%;
   width: 20%;
-  background: ${colors.MEDIUM_DARK};
+  background: ${colors.LIGHT_DARK};
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -32,7 +31,7 @@ const LinkSection = styled.div`
   height: 100%;
   width: 80%;
   padding-right: 75px;
-  background: ${colors.MEDIUM_DARK};
+  background: ${colors.LIGHT_DARK};
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -44,14 +43,14 @@ const LinkSection = styled.div`
 
 const Tags = styled.div`
   font-size: 22px;
-  color: ${colors.LIGHT};
+  color: ${colors.DARK};
   position: relative;
   padding-right: 50px;
 `;
 
 const StyledLink = styled(GatsbyLink)`
   text-decoration: none;
-  color: ${colors.LIGHT};
+  color: ${colors.DARK};
 
   &:hover {
     color: ${colors.BRIGHT};

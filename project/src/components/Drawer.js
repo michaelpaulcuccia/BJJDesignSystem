@@ -4,9 +4,10 @@ import styled from "styled-components";
 import * as colors from "../constants/StyleConsts";
 
 const Container = styled.div`
-  height: 350px;
-  width: 300px;
-  background: ${colors.MEDIUM_DARK};
+  height: 310px;
+  width: 200px;
+  border-radius: 5px;
+  background: ${colors.LIGHT_DARK};
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -15,34 +16,44 @@ const Container = styled.div`
   img {
     height: 150px;
     width: 195px;
-    padding-left: 25px;
+    padding-top: 15px;
   }
 `;
 
 const StyledLink = styled(GatsbyLink)`
   text-decoration: none;
-  color: ${colors.LIGHT};
+  color: ${colors.DARK};
 
   ul {
-    padding-top: 35px;
+    padding-top: 50px;
 
-    li {
+    //Item at the Top of the Drawer
+    .drawer-head {
       list-style-type: none;
-      padding-bottom: 5px;
       padding-left: 25px;
-      font-size: 22px;
+      font-size: 26px;
 
-        //allows each individual li to have hover effect
-        &:hover {
+          &:hover {
           color: ${colors.BRIGHT};
         }
     }
 
     //Nested ul
-    ul {
+    .link-items-ul {
       padding-top: 15px;
-      padding-bottom: 15px;
-      padding-left: 15px;
+      padding-left: 25px;
+      font-size: 24px;
+      list-style-type: none;
+
+      li {
+        &:hover {
+          color: ${colors.BRIGHT};
+        }
+        &::before{
+          content: '›';
+          padding-right: 5px;
+        }
+      }
     }
   }
 `;
@@ -55,8 +66,8 @@ const Drawer = (props) => {
     <Container>
       <StyledLink to={props.linkAddress}>
         <ul>
-          <li>{removedSlash}</li>
-          <ul>
+          <li className='drawer-head'>{removedSlash}</li>
+          <ul className='link-items-ul'>
             <li>Sweeps</li>
             <li>Submissions</li>
           </ul>
