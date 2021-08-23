@@ -1,9 +1,11 @@
-import React, { useState } from "react";
-//import { Link } from "gatsby";
+import React, { useState, useEffect } from "react";
 import { Link as GatsbyLink } from "gatsby";
 import styled from "styled-components";
 import * as colors from "../constants/StyleConsts";
 import Drawer from "./Drawer";
+import mount from "../images/mount-top.png";
+import closedguardbottom from '../images/closed-guard-bottom.png';
+import halfguard from '../images/half-guard.png';
 
 const Container = styled.div`
   width: 100%;
@@ -14,7 +16,7 @@ const Container = styled.div`
 
 const HomeSection = styled.div`
   height: 100%;
-  width: 50%;
+  width: 20%;
   background: ${colors.MEDIUM_DARK};
   display: flex;
   justify-content: flex-start;
@@ -28,7 +30,8 @@ const HomeSection = styled.div`
 
 const LinkSection = styled.div`
   height: 100%;
-  width: 50%;
+  width: 80%;
+  padding-right: 75px;
   background: ${colors.MEDIUM_DARK};
   display: flex;
   justify-content: space-around;
@@ -40,9 +43,10 @@ const LinkSection = styled.div`
 `;
 
 const Tags = styled.div`
-  font-size: 26px;
+  font-size: 22px;
   color: ${colors.LIGHT};
   position: relative;
+  padding-right: 50px;
 `;
 
 const StyledLink = styled(GatsbyLink)`
@@ -55,8 +59,31 @@ const StyledLink = styled(GatsbyLink)`
 `;
 
 const Header = () => {
+
   const [showClosedGuardDrawer, setShowClosedDrawerGuard] = useState(false);
   const [showMountDrawer, setShowMountDrawer] = useState(false);
+  const [showHalfGuardDrawer, setShowHalfGuardDrawer] = useState(false);
+
+  //handles closing drawers when a new one opens
+  useEffect(()=> {
+
+    if(showClosedGuardDrawer){
+      setShowMountDrawer(false);
+      setShowHalfGuardDrawer(false);
+    }
+
+    if(showMountDrawer){
+      setShowClosedDrawerGuard(false);
+      setShowHalfGuardDrawer(false);
+    }
+
+    if(showHalfGuardDrawer){
+      setShowClosedDrawerGuard(false);
+      setShowMountDrawer(false);
+    }
+
+  }, [showClosedGuardDrawer, showMountDrawer, showHalfGuardDrawer]);
+ 
 
   return (
     <Container>
@@ -68,13 +95,16 @@ const Header = () => {
       <LinkSection>
         <Tags onClick={() => setShowClosedDrawerGuard(!showClosedGuardDrawer)}>
           Closed Guard
-          {showClosedGuardDrawer && <Drawer linkAddress="/ClosedGuard" />}
+          {showClosedGuardDrawer && <Drawer linkAddress="/ClosedGuard" useImage={closedguardbottom}/>}
         </Tags>
         <Tags onClick={() => setShowMountDrawer(!showMountDrawer)}>
           Mount
-          {showMountDrawer && <Drawer linkAddress="/Mount" />}
+          {showMountDrawer && <Drawer linkAddress="/Mount" useImage={mount}/>}
         </Tags>
-        <Tags>Half Guard</Tags>
+        <Tags onClick={() => setShowHalfGuardDrawer(!showHalfGuardDrawer)}>
+          Half Guard
+          {showHalfGuardDrawer && <Drawer linkAddress="/HalfGuard" useImage={halfguard}/>}
+          </Tags>
       </LinkSection>
     </Container>
   );
@@ -82,7 +112,3 @@ const Header = () => {
 
 export default Header;
 
-/*
-Styled Link example for later..
-<StyledLink to="/ClosedGuard">ClosedGuard</StyledLink> 
-*/

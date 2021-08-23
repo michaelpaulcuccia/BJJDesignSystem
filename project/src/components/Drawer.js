@@ -1,9 +1,7 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link as GatsbyLink } from "gatsby";
 import styled from "styled-components";
 import * as colors from "../constants/StyleConsts";
-//import { GatsbyImage} from "gatsby-plugin-image"
-import mount from "../images/mount.png";
 
 const Container = styled.div`
   height: 350px;
@@ -25,10 +23,6 @@ const StyledLink = styled(GatsbyLink)`
   text-decoration: none;
   color: ${colors.LIGHT};
 
-  &:hover {
-    color: ${colors.BRIGHT};
-  }
-
   ul {
     padding-top: 35px;
 
@@ -37,6 +31,11 @@ const StyledLink = styled(GatsbyLink)`
       padding-bottom: 5px;
       padding-left: 25px;
       font-size: 22px;
+
+        //allows each individual li to have hover effect
+        &:hover {
+          color: ${colors.BRIGHT};
+        }
     }
 
     //Nested ul
@@ -49,9 +48,9 @@ const StyledLink = styled(GatsbyLink)`
 `;
 
 const Drawer = (props) => {
-  const removedSlash = props.linkAddress.substring(1);
-  console.log(removedSlash);
 
+  const removedSlash = props.linkAddress.substring(1);
+  
   return (
     <Container>
       <StyledLink to={props.linkAddress}>
@@ -63,7 +62,7 @@ const Drawer = (props) => {
           </ul>
         </ul>
       </StyledLink>
-      <img src={mount} alt="mount" />
+      <img src={props.useImage} alt={removedSlash} />
     </Container>
   );
 };
