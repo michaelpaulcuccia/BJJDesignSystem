@@ -13,11 +13,20 @@ const Container = styled.div`
   flex-direction: column;
   align-content: flex-end;
 
-  img {
-    height: 150px;
-    width: 195px;
-    padding-top: 15px;
+  .imageContainer {
+
+    background: ${colors.BRIGHT};
+    height: 100%;
+    width: 100%;
+
+      img {
+        height: 75%;
+        width: 75%;
+        padding-top: 15px;
+      }
+
   }
+  
 `;
 
 const StyledLink = styled(GatsbyLink)`
@@ -59,7 +68,13 @@ const StyledLink = styled(GatsbyLink)`
 `;
 
 const ListItemLink = styled(GatsbyLink)`
-  color: blue;
+  text-decoration: none;
+  color: ${colors.DARK};
+
+  &:hover {
+    color: ${colors.BRIGHT};
+  }
+
 `;
 
 const Drawer = (props) => {
@@ -73,11 +88,13 @@ const Drawer = (props) => {
           <li className='drawer-head'>{removedSlash}</li>
           <ul className='link-items-ul'>
             <li><ListItemLink to={props.sweepsAddress}>Sweeps</ListItemLink></li>
-            <li>Submissions</li>
+            <li><ListItemLink to={props.submissionsAddress}>Submissions</ListItemLink></li>
           </ul>
         </ul>
       </StyledLink>
-      <img src={props.useImage} alt={removedSlash} />
+      <div className='imageContainer'>
+        <img src={props.useImage} alt={removedSlash} />
+      </div>
     </Container>
   );
 };

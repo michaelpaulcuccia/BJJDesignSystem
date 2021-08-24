@@ -97,6 +97,7 @@ const Header = () => {
           {showClosedGuardDrawer && <Drawer 
           linkAddress="/ClosedGuard" 
           sweepsAddress="/ClosedGuard/Sweeps"
+          submissionsAddress="/ClosedGuard/Submissions"
           useImage={closedguardbottom}
           />}
         </Tags>
