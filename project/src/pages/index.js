@@ -1,5 +1,5 @@
 import React from "react";
-import "../../cssReset/reset.css";
+import "../cssReset/reset.css";
 import SEO from "../components/seo";
 import Layout from "../components/layout";
 import Header from "../components/Header";
