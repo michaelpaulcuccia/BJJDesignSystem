@@ -94,7 +94,11 @@ const Header = () => {
       <LinkSection>
         <Tags onClick={() => setShowClosedDrawerGuard(!showClosedGuardDrawer)}>
           Closed Guard
-          {showClosedGuardDrawer && <Drawer linkAddress="/ClosedGuard" useImage={closedguardbottom}/>}
+          {showClosedGuardDrawer && <Drawer 
+          linkAddress="/ClosedGuard" 
+          sweepsAddress="/ClosedGuard/Sweeps"
+          useImage={closedguardbottom}
+          />}
         </Tags>
         <Tags onClick={() => setShowMountDrawer(!showMountDrawer)}>
           Mount

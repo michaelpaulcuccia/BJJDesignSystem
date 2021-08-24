@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import { Link as GatsbyLink } from "gatsby";
 import styled from "styled-components";
 import * as colors from "../constants/StyleConsts";
@@ -58,6 +58,10 @@ const StyledLink = styled(GatsbyLink)`
   }
 `;
 
+const ListItemLink = styled(GatsbyLink)`
+  color: blue;
+`;
+
 const Drawer = (props) => {
 
   const removedSlash = props.linkAddress.substring(1);
@@ -68,7 +72,7 @@ const Drawer = (props) => {
         <ul>
           <li className='drawer-head'>{removedSlash}</li>
           <ul className='link-items-ul'>
-            <li>Sweeps</li>
+            <li><ListItemLink to={props.sweepsAddress}>Sweeps</ListItemLink></li>
             <li>Submissions</li>
           </ul>
         </ul>
