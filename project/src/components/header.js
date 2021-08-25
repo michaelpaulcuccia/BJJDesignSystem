@@ -16,7 +16,7 @@ const Container = styled.div`
 const HomeSection = styled.div`
   height: 100%;
   width: 20%;
-  background: ${colors.LIGHT_DARK};
+  background: ${colors.BRIGHT};
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -31,7 +31,7 @@ const LinkSection = styled.div`
   height: 100%;
   width: 80%;
   padding-right: 75px;
-  background: ${colors.LIGHT_DARK};
+  background: ${colors.BRIGHT};
   display: flex;
   justify-content: space-around;
   align-items: center;

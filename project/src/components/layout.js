@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import { CLOUDY } from "../constants/StyleConsts";
+import * as colors from "../constants/StyleConsts";
 
 const ProjectContainer = styled.div`
   margin: 0 auto;
   max-width: 1800px;
   min-height: 100vh;
-  background: ${CLOUDY};
+  background: ${colors.LIGHT_DARK};
 `;
 
 const layout = (props) => {

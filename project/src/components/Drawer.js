@@ -7,7 +7,7 @@ const Container = styled.div`
   height: 310px;
   width: 200px;
   border-radius: 5px;
-  background: ${colors.LIGHT_DARK};
+  background: ${colors.BRIGHT};
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -15,9 +15,11 @@ const Container = styled.div`
 
   .imageContainer {
 
-    background: ${colors.BRIGHT};
+    background: ${colors.CLOUDY};
     height: 100%;
     width: 100%;
+    display: flex;
+    justify-content: center;
 
       img {
         height: 75%;
@@ -50,6 +52,7 @@ const StyledLink = styled(GatsbyLink)`
     //Nested ul
     .link-items-ul {
       padding-top: 15px;
+      padding-bottom: 10px;
       padding-left: 25px;
       font-size: 24px;
       list-style-type: none;
