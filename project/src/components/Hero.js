@@ -12,6 +12,19 @@ const HeroContainer = styled.div`
     background-repeat: no-repeat;
     display: flex;
     justify-content: flex-start;
+    //position: relative;
+    //z-index: 0;
+
+    /* &::before {
+        content: '';
+        width: 100%;
+        height: 550px;
+        background: rgba(0,0,0,.65);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;        
+    } */
 `;
 
 const HeroText = styled.p`
