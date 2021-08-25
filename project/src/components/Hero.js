@@ -13,9 +13,9 @@ const HeroContainer = styled.div`
     display: flex;
     justify-content: flex-start;
     //position: relative;
-    //z-index: 0;
+    z-index: 0;
 
-    /* &::before {
+    &::before {
         content: '';
         width: 100%;
         height: 550px;
@@ -24,7 +24,7 @@ const HeroContainer = styled.div`
         top: 0;
         left: 0;
         z-index: -1;        
-    } */
+    }
 `;
 
 const HeroText = styled.p`
