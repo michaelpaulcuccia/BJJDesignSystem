@@ -47,7 +47,7 @@ const HeroText = styled.p`
         font-size: 35px;
         letter-spacing: 3px;
         padding-left: 35px;
-        padding-top: 125px;
+        padding-top: 75px;
     }
 
     span {

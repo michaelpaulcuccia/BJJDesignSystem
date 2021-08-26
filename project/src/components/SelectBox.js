@@ -25,7 +25,8 @@ const SelectBoxContainer = styled.div`
         font-size: 36px;
 
         @media (max-width: 850px) {
-            font-size: 28px;
+            font-size: 24px;
+            padding-top: 35px;
         }
     }
 `;
@@ -39,7 +40,7 @@ const ItemsContainer = styled.div`
     @media (max-width: 850px) {
         flex-direction: column;
         align-items: center;
-        padding-top: 5px;
+        padding-top: 15px;
     }
     
 `;
