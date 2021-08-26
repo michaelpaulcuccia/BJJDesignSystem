@@ -12,8 +12,12 @@ const HeroContainer = styled.div`
     background-repeat: no-repeat;
     display: flex;
     justify-content: flex-start;
-    //position: relative;
+    position: relative;
     z-index: 0;
+
+    @media (max-width: 850px) {
+        height: 350px;
+    }
 
     &::before {
         content: '';
@@ -23,7 +27,11 @@ const HeroContainer = styled.div`
         position: absolute;
         top: 0;
         left: 0;
-        z-index: -1;        
+        z-index: -1;      
+        
+        @media (max-width: 850px) {
+            height: 350px;
+        }
     }
 `;
 
@@ -34,6 +42,13 @@ const HeroText = styled.p`
     letter-spacing: 5px;
     padding-left: 50px;
     padding-top: 150px;
+
+    @media (max-width: 850px) {
+        font-size: 35px;
+        letter-spacing: 3px;
+        padding-left: 35px;
+        padding-top: 125px;
+    }
 
     span {
         color: ${colors.LIGHT_DARK}

@@ -12,6 +12,8 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-content: flex-end;
+  //put drawer on top of hero's overlay
+  z-index: 2;
 
   .imageContainer {
 
@@ -20,6 +22,8 @@ const Container = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
+    //put drawer on top of hero's overlay
+    z-index: 2;
 
       img {
         height: 75%;
@@ -45,7 +49,7 @@ const StyledLink = styled(GatsbyLink)`
       font-size: 26px;
 
           &:hover {
-          color: ${colors.BRIGHT};
+          color: ${colors.LIGHT_DARK};
         }
     }
 
@@ -59,7 +63,7 @@ const StyledLink = styled(GatsbyLink)`
 
       li {
         &:hover {
-          color: ${colors.BRIGHT};
+          color: ${colors.LIGHT_DARK};
         }
         &::before{
           content: '›';
@@ -75,7 +79,7 @@ const ListItemLink = styled(GatsbyLink)`
   color: ${colors.DARK};
 
   &:hover {
-    color: ${colors.BRIGHT};
+    color: ${colors.LIGHT_DARK};
   }
 
 `;
