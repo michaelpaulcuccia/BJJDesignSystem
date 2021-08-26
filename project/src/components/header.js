@@ -103,11 +103,21 @@ const Header = () => {
         </Tags>
         <Tags onClick={() => setShowMountDrawer(!showMountDrawer)}>
           Mount
-          {showMountDrawer && <Drawer linkAddress="/Mount" useImage={mount}/>}
+          {showMountDrawer && <Drawer 
+          linkAddress="/Mount" 
+          sweepsAddress="/Mount/Sweeps"
+          submissionsAddress="/Mount/Submissions"
+          useImage={mount}
+          />}
         </Tags>
         <Tags onClick={() => setShowHalfGuardDrawer(!showHalfGuardDrawer)}>
           Half Guard
-          {showHalfGuardDrawer && <Drawer linkAddress="/HalfGuard" useImage={halfguard}/>}
+          {showHalfGuardDrawer && <Drawer 
+          linkAddress="/HalfGuard" 
+          sweepsAddress="/HalfGuard/Sweeps"
+          submissionsAddress="/HalfGuard/Submissions"
+          useImage={halfguard}
+          />}
           </Tags>
       </LinkSection>
     </Container>

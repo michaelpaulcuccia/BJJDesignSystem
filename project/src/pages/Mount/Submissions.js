@@ -4,8 +4,8 @@ import Header from '../../components/header';
 const Submissions = () => {
     return (
         <>
-            <Header/>
-                Hello, from ClosedGuard/Submissions.js
+            <Header />
+            Welcome to Mount/Submissions.js
         </>
     )
 }

@@ -7,6 +7,11 @@ const ProjectContainer = styled.div`
   max-width: 1800px;
   min-height: 100vh;
   background: ${colors.LIGHT_DARK};
+
+  //added to align SelectBox
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const layout = (props) => {

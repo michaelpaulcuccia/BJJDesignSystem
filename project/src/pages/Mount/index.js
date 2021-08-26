@@ -1,13 +1,13 @@
 import React from 'react';
 import Header from '../../components/header';
 
-const Sweeps = () => {
+const index = () => {
     return (
         <>
-            <Header/>
-            Hello, from ClosedGuard/Sweeps.js
+            <Header />
+            Welcome to Mount.js
         </>
     )
 }
 
-export default Sweeps
+export default index

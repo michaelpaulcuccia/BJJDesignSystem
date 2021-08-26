@@ -4,8 +4,8 @@ import Header from '../../components/header';
 const Sweeps = () => {
     return (
         <>
-            <Header/>
-            Hello, from ClosedGuard/Sweeps.js
+            <Header />
+            Welcome to Mount/Sweeps.js
         </>
     )
 }
