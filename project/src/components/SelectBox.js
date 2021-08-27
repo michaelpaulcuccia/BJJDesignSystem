@@ -12,6 +12,7 @@ const SelectBoxContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 5px;
 
     @media (max-width: 850px) {
         height: 350px;

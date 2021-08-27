@@ -67,6 +67,8 @@ const StyledLink = styled(GatsbyLink)`
         }
         &::before{
           content: '›';
+          //font-family needed to change in order to keep shape of caret
+          font-family: Arial, Helvetica, sans-serif;
           padding-right: 5px;
         }
       }

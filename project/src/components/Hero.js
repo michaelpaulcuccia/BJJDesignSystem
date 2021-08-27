@@ -37,7 +37,6 @@ const HeroContainer = styled.div`
 
 const HeroText = styled.p`
     color: ${colors.CLOUDY};
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 50px;
     letter-spacing: 5px;
     padding-left: 50px;
